@@ -1,0 +1,3 @@
+﻿  laba5.cpp
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(110,11): error C2039: F: не является членом "Vector"
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(15): message : см. объявление "Vector"
