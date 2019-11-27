@@ -1,49 +1,40 @@
 ﻿#include <iostream>
 #include <math.h>
-#define five 5
 using namespace std;
-/*
- 66   21  -3   -1  90
- 1    74  -2   80  -1
-10   30  20 -50  91
- 2     4    5   81   0
-33   69  -5   51  24
-
-
- */
 
 class Vector {
 private:
+	int Five [5];
 	int array[5];
 public:
 	friend void InputMatrix(Vector matrix[]) {
-		for (int line = 0; line < five; ++line) {
-			for (int column = 0; column < five; ++column) {
-				cin >> matrix[column].array[line];
+		for (int b = 0; b < five; ++b) {
+			for (int a = 0; a < five; ++a) {
+				cin >> matrix[a].array[b];
 			}
 		}
 
 	}
 
-	void Sort(int start, int last) {
+	void sort(int start, int last) {
 		if (start < last) {
 			int mean = (start + last) / 2;
-			Sort(start, mean);
-			Sort(mean + 1, last);
+			sort(start, mean);
+			sort(mean + 1, last);
 			merge(start, mean, last);
 		}
 	}
 	friend void sum(Vector matrix[])
 	{
-		int ryad, stovp, mj = 1;
+		int i, j, mnojenny = 1;
 		double F = 0, f;
-		for (ryad = 0; ryad < five; ryad++)
+		for (i = 0; i < five; i++)
 		{
-			for (stovp = 0; stovp < five; stovp++)
+			for (j = 0; j < five; j++)
 			{
-				mj *= matrix[stovp].array[ryad];
-				f = pow(mj, 1 / stovp);
-				F += f/ryad;
+				mnojenny *= matrix[j].array[i];
+				f = pow(mnojenny, 1 / j);
+				F += f/i;
 			}
 			cout << "F =" << F << endl;
 		}
@@ -53,10 +44,10 @@ public:
 
 	friend void OutMatrix(Vector matrix[])
 	{
-		for (int line = 0; line < five; line++)
+		for (int b = 0; b < five; b++)
 		{
-			for (int column = 0; column < five; ++column) {
-				cout << matrix[column].array[line] << " ";
+			for (int a = 0; a < five; ++a) {
+				cout << matrix[a].array[b] << " ";
 			}
 			cout << endl;
 		}
@@ -64,34 +55,34 @@ public:
 	}
 	void merge(int start, int mean, int last) {
 		int n[5];
-		int line = start, column = mean + 1, a = 0;
+		int b = start, a = mean + 1, a = 0;
 
-		while (line <= mean && column <= last) {
-			if (this->array[line] <= this->array[column]) {
-				n[a] = this->array[line];
+		while (b <= mean && a <= last) {
+			if (this->array[b] <= this->array[a]) {
+				n[a] = this->array[b];
 				a++;
-				line++;
+				b++;
 			}
 			else {
-				n[a] = this->array[column];
+				n[a] = this->array[a];
 				a++;
-				column++;
+				a++;
 			}
 		}
 
-		while (line <= mean) {
-			n[a] = this->array[line];
+		while (b <= mean) {
+			n[a] = this->array[b];
 			a++;
-			line++;
+			b++;
 		}
 
-		while (column <= last) {
-			n[a] = this->array[column];
+		while (a <= last) {
+			n[a] = this->array[a];
 			a++;
-			column++;
+			a++;
 		}
-		for (line = start; line <= last; line++) {
-			this->array[line] = n[line - start];
+		for (b = start; b <= last; b++) {
+			this->array[b] = n[b - start];
 		}
 	}
 };
@@ -99,11 +90,11 @@ public:
 
 int main()
 {
-	Vector Matrix[five];
+	Vector Matrix[5];
 	cout << "Enter the numbers:" << endl;
 	InputMatrix(Matrix);
-	for (int line = 0; line < five; ++line) {
-		Matrix[line].Sort(0, five - 1);
+	for (int b = 0; b < 5; ++b) {
+		Matrix[b].sort(0, 5 - 1);
 	}
 	cout << "Merged matrix:" << endl;
 	OutMatrix(Matrix);

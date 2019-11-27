@@ -1,3 +1,11 @@
 ﻿  laba5.cpp
-C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(110,11): error C2039: F: не является членом "Vector"
-C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(15): message : см. объявление "Vector"
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(11,23): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(12,24): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(31,19): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(33,20): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(47,23): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(49,24): error C2065: five: необъявленный идентификатор
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(58,32): error C2374: a: переопределение; множественная инициализация
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(58): message : см. объявление "a"
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(101,11): error C2039: F: не является членом "Vector"
+C:\Users\Bogdan\source\repos\laba5\laba5\laba5.cpp(5): message : см. объявление "Vector"
