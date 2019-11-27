@@ -1,13 +1,14 @@
 ﻿#include <iostream>
 #include <math.h>
+#define five 5
 using namespace std;
 
 class Vector {
 private:
-	int Five [5];
+	
 	int array[5];
 public:
-	friend void InputMatrix(Vector matrix[]) {
+	friend void inputmatrix(Vector matrix[]) {
 		for (int b = 0; b < five; ++b) {
 			for (int a = 0; a < five; ++a) {
 				cin >> matrix[a].array[b];
@@ -42,7 +43,7 @@ public:
 	}
 
 
-	friend void OutMatrix(Vector matrix[])
+	friend void outmatrix(Vector matrix[])
 	{
 		for (int b = 0; b < five; b++)
 		{
@@ -55,30 +56,30 @@ public:
 	}
 	void merge(int start, int mean, int last) {
 		int n[5];
-		int b = start, a = mean + 1, a = 0;
+		int b = start, a = mean + 1, h = 0;
 
 		while (b <= mean && a <= last) {
 			if (this->array[b] <= this->array[a]) {
 				n[a] = this->array[b];
-				a++;
+				h++;
 				b++;
 			}
 			else {
 				n[a] = this->array[a];
-				a++;
+				h++;
 				a++;
 			}
 		}
 
 		while (b <= mean) {
 			n[a] = this->array[b];
-			a++;
+			h++;
 			b++;
 		}
 
 		while (a <= last) {
 			n[a] = this->array[a];
-			a++;
+			h++;
 			a++;
 		}
 		for (b = start; b <= last; b++) {
@@ -92,13 +93,13 @@ int main()
 {
 	Vector Matrix[5];
 	cout << "Enter the numbers:" << endl;
-	InputMatrix(Matrix);
+	inputmatrix(Matrix);
 	for (int b = 0; b < 5; ++b) {
 		Matrix[b].sort(0, 5 - 1);
 	}
 	cout << "Merged matrix:" << endl;
-	OutMatrix(Matrix);
-	Matrix->F(Matrix);
+	outmatrix(Matrix);
+	//Matrix->F(Matrix);
 	sum (Matrix);
 
 	return 0;
